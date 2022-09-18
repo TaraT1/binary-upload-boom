@@ -1,3 +1,8 @@
+Group project 100devs code 
+- Harvey S - backend updates adding comments functionality [Derived code](https://github.com/hlsamuel00)
+- Tara Thierry - frontend changes 
+
+Push to https://github.com/TaraT1/binary-upload-boom groupFE
 # Install
 
 `npm install`
