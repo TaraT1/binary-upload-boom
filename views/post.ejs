@@ -6,7 +6,7 @@
       <img class="img-fluid mw-100" src="<%= post.image%>" />
 
       <!-- Icons below img -->
-      <div class="row align-items-center justify-content-between">
+      <div class="row  justify-content-between">
         <form
           class="col-2"
           action="/post/likePost/<%= post.id %>?_method=PUT"
@@ -27,10 +27,10 @@
       </div>
     </div>
 
-    <!-- Caption -->
+    <!-- Caption; new col -->
     <div class="col-6 mt-4">
       <p><%= post.caption %></p>
-      
+      <!--previous /div  -->
     <!-- List of Comments -->
     <div class="row-3">
       <ul class="row list-unstyled">
@@ -38,27 +38,30 @@
           <li class="row-6 justify-content-between mt-5">
             <p><%= comments[i].comment %></p>
 
-      <!-- Icons below comments-->
-      <div class="row align-items-center justify-content-between">
-        <form
-          class="col-3"
-          action="/post/likePost/<%= post.id %>?_method=PUT"
-          method="POST"
-        >
-          <button class="btn btn-primary btn-small fa fa-heart" type="submit"></button>
-        </form>
-        <h3 class="h6 col-3">Likes: <%= post.likes %></h3>
-        <%if(post.user == user.id){ %>
-        <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary btn-small fa fa-trash" type="submit"></button>
-        </form>
-        <%}%>
-      </ul>
-    </div>
+            <!-- Icons below comments-->
+            <div class="row align-items-center justify-content-between">
+              <form
+                class="col-3"
+                action="/post/likePost/<%= post.id %>?_method=PUT"
+                method="POST"
+              >
+                <button class="btn btn-primary btn-small fa fa-heart" type="submit"></button>
+              </form>
+              <h3 class="h6 col-3">Likes: <%= post.likes %></h3>
+              <%if(post.user == user.id){ %>
+              <form
+                action="/post/deletePost/<%= post.id %>?_method=DELETE"
+                method="POST"
+                class="col-3"
+              >
+                <button class="btn btn-primary btn-small fa fa-trash" type="submit"></button>
+              </form>
+              <%}%>
+            </div>
+          </li>
+          <% } %>
+          </ul>
+        </div>
 
 
       <!-- Create Comment -->
